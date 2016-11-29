@@ -1,0 +1,23 @@
+<ion-header>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <ion-grid>
+    <ion-row wrap>
+      <ion-col width-50 *ngFor="let c of cards">
+        <ion-card (click)="openSelectedMood(c.moodId)" >
+          <img  class = "card-image" src= {{c.image}}/>
+
+          <div class="card-title">{{c.title}}</div>
+
+
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>
