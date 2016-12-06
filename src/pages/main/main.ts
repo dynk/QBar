@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 import { MoodsObject } from '../../model/MoodsObject';
-import { ResultPage } from '../result/result'
+import { ResultPage } from '../result/result';
+
 
 @Component({
   selector: 'page-main',
   templateUrl: 'main.html'
 })
 export class MainPage {
+
 
 
   constructor(public navCtrl: NavController) {
@@ -26,5 +28,6 @@ export class MainPage {
     });
 
   }
+
 
 }
