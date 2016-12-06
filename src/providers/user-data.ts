@@ -9,6 +9,8 @@ export class UserData {
   name: String;
   id;
   avatar;
+  actualPosition;
+  actualDate;
   HAS_LOGGED_IN = 'hasLoggedIn';
   HAS_SEEN_TUTORIAL = 'hasSeenTutorial';
 
@@ -36,8 +38,18 @@ export class UserData {
     this.storage.set('username', username);
   };
 
+  setUserActualPosition(position) {
+    this.storage.set('actualposition', position);
+  };
+
   getUsername() {
     return this.storage.get('username').then((value) => {
+      return value;
+    });
+  };
+
+  getUserActualPosition() {
+    return this.storage.get('actualposition').then((value) => {
       return value;
     });
   };

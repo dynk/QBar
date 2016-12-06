@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { UserData } from '../../providers/user-data';
+import { Databaseprovider } from '../../providers/databaseprovider'
 
-/*
-  Generated class for the Result page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-result',
   templateUrl: 'result.html'
@@ -14,14 +11,18 @@ import { NavController, NavParams } from 'ionic-angular';
 export class ResultPage {
 
   // Teste RDNS :
-  test
+  // test;
+  // booksOnce;
 
-  constructor(public navCtrl: NavController, private navParams: NavParams) {
-    this.test = this.navParams.get('data');
+  constructor(public navCtrl: NavController, private navParams: NavParams, private userData: UserData, private dbProvider: Databaseprovider) {
+    // this.booksOnce = this.dbProvider.getData();
   }
 
   ionViewDidLoad() {
-    console.log('Hello ResultPage Page');
+    console.log('ResultPage loaded');
+    // this.test = this.navParams.get('data');
+
+
   }
 
 

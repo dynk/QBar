@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MoodsObject } from '../../model/MoodsObject';
 import { ResultPage } from '../result/result';
+import { Config } from '../../config/config'
 
 
 @Component({
@@ -18,8 +19,12 @@ export class MainPage {
   }
 
   // teste RDNS : populando temporariamente
-  cteste: MoodsObject = new MoodsObject();
-  cards = this.cteste.getMoods();
+  moods: MoodsObject = new MoodsObject();
+  cards = this.moods.getMoods();
+
+  ionViewDidLoad() {
+    console.log("MainPage loaded");
+  }
 
 
   openSelectedMood(data){
