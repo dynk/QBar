@@ -21,8 +21,13 @@ export class Databaseprovider {
 
     // return this.angFire.database.list('/Books').take(1);
     return this.angFire.database.list('/Books').take(1).map(data =>{
+      console.log(data);
       return data;
     });
+    // return firebase.database().ref('/Books' ).once('value').then(function(snapshot) {
+    //   console.log(snapshot.val());
+    //   return snapshot.val();
+    // });
 
   }
 

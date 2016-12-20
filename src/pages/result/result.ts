@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { UserData } from '../../providers/user-data';
-import { Databaseprovider } from '../../providers/databaseprovider'
-
+import { ParseProvider } from '../../providers/parse-provider';
 
 @Component({
   selector: 'page-result',
@@ -11,17 +10,21 @@ import { Databaseprovider } from '../../providers/databaseprovider'
 export class ResultPage {
 
   // Teste RDNS :
-  // test;
-  // booksOnce;
+  estabelecimentos: any;
+  booksOnce;
 
-  constructor(public navCtrl: NavController, private navParams: NavParams, private userData: UserData, private dbProvider: Databaseprovider) {
-    // this.booksOnce = this.dbProvider.getData();
+  constructor(
+    public navCtrl: NavController,
+    private navParams: NavParams,
+    private userData: UserData,
+    public parseProvider: ParseProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ResultPage loaded');
-    // this.test = this.navParams.get('data');
-
+    let mainData = this.navParams.get('data');
+    this.estabelecimentos = this.parseProvider.findEstabelecimentos(mainData);
+    console.log(this.estabelecimentos);
 
   }
 

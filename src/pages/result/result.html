@@ -14,13 +14,37 @@
 
 
 <ion-content padding>
-  <h1>{{test}}</h1>
-  <!-- <ion-list>
+  <!-- <h1>{{test}}</h1>
+  <ion-list>
   <ion-item *ngFor="let b of booksOnce | async">
     {{b.title}}
     {{b.author}}
   </ion-item>
 </ion-list> -->
+<div class="list">
+
+    <!-- <a class="item item-avatar" href="#" *ngFor="let estabelecimento of estabelecimentos">
+      <img src= {{estabelecimento.avatar}}>
+      <h2>{{estabelecimento.name}}</h2>
+      <p>Back off, man. I'm a scientist.</p>
+    </a> -->
+  <ion-list>
+      <ion-item *ngFor="let estabelecimento of estabelecimentos">
+      <ion-avatar item-left>
+      <img src= {{estabelecimento.avatar}}>
+      </ion-avatar>
+      <h2>{{estabelecimento.name}}</h2>
+      <h3>{{estabelecimento.location.address[0]}}</h3>
+      <p>{{estabelecimento.dist_from_user}} km de distancia</p>
+    </ion-item>
+  </ion-list>
+    <!-- <a class="item item-avatar" href="#">
+      <img src="venkman.jpg">
+      <h2>Venkman</h2>
+      <p>Back off, man. I'm a scientist.</p>
+    </a> -->
+
+</div>
 
 
 </ion-content>

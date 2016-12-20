@@ -27,7 +27,15 @@ export class MainPage {
   }
 
 
-  openSelectedMood(data){
+  openSelectedMood(mood){
+    // RDNS test - forcing values for a while
+    let data = {
+      "moods": [mood.toLowerCase()],
+      "location": {
+        "latitude": -19.8039051,
+        "longitude":-43.963071
+      }
+    };
     this.navCtrl.push(ResultPage,{
       data: data
     });

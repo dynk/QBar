@@ -12,7 +12,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { FirebaseModule } from '../providers/firebase';
 
 import { Storage } from '@ionic/storage';
-import { Databaseprovider } from '../providers/databaseprovider';
+import { ParseProvider } from '../providers/parse-provider';
 import { UserData } from '../providers/user-data';
 
 
@@ -44,6 +44,6 @@ import { UserData } from '../providers/user-data';
     SignupPage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Databaseprovider, UserData, Storage]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ParseProvider, UserData, Storage]
 })
 export class AppModule {}

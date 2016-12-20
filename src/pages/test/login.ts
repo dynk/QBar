@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import 'rxjs/add/operator/take';
-import { Databaseprovider } from '../../providers/databaseprovider';
+
 
 
 
@@ -13,7 +13,7 @@ export class LoginPage {
   // Test RDNS
   // books: FirebaseListObservable<any>;
   booksOnce;
-  constructor(public navCtrl: NavController, public dbProvider: Databaseprovider) {
+  constructor(public navCtrl: NavController) {
     // this.books = angFire.database.list('/Books');
 
   }
@@ -27,9 +27,7 @@ export class LoginPage {
   }
 
   getDataOnce(){
-    this.booksOnce = this.dbProvider.getData();
-    // this.booksOnce = this.angFire.database.list('/Books').take(1);
-    console.log(this.booksOnce);
+
   }
 
 
