@@ -1,0 +1,33 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>estabelecimento-detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-slides pager>
+        <ion-slide *ngFor="let slide of estabelecimentoImages">
+          <img src= {{slide.img}} class="slide-image"/>
+        </ion-slide>
+    </ion-slides>
+
+
+    <ion-card-content *ngFor="let e of estabelecimento">
+      <ion-card-title>
+        {{e.name}}
+      </ion-card-title>
+      <h2>Endereco: {{e.location.address}}</h2>
+      <p>
+        {{e.descricao}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

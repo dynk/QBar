@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { UserData } from '../../providers/user-data';
 import { ParseProvider } from '../../providers/parse-provider';
+import { EstabelecimentoDetailPage } from '../estabelecimento-detail/estabelecimento-detail';
 
 @Component({
   selector: 'page-result',
@@ -11,7 +12,7 @@ export class ResultPage {
 
   // Teste RDNS :
   estabelecimentos: any;
-  booksOnce;
+
 
   constructor(
     public navCtrl: NavController,
@@ -21,11 +22,14 @@ export class ResultPage {
   }
 
   ionViewDidLoad() {
-    console.log('ResultPage loaded');
     let mainData = this.navParams.get('data');
     this.estabelecimentos = this.parseProvider.findEstabelecimentos(mainData);
-    console.log(this.estabelecimentos);
+  }
 
+  openDetailPage(estabelecimento_id){
+    this.navCtrl.push(EstabelecimentoDetailPage,{
+      data:estabelecimento_id
+    });
   }
 
 

@@ -9,7 +9,7 @@ import { ResultPage } from '../pages/result/result';
 import { VoucherPage } from '../pages/voucher/voucher';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
-import { FirebaseModule } from '../providers/firebase';
+import { EstabelecimentoDetailPage } from '../pages/estabelecimento-detail/estabelecimento-detail';
 
 import { Storage } from '@ionic/storage';
 import { ParseProvider } from '../providers/parse-provider';
@@ -26,11 +26,11 @@ import { UserData } from '../providers/user-data';
     VoucherPage,
     LoginPage,
     SignupPage,
+    EstabelecimentoDetailPage,
     TabsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp),
-    FirebaseModule
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -42,6 +42,7 @@ import { UserData } from '../providers/user-data';
     VoucherPage,
     LoginPage,
     SignupPage,
+    EstabelecimentoDetailPage,
     TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ParseProvider, UserData, Storage]
